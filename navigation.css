@@ -180,4 +180,7 @@ header#main-header::after {
     #nav-extra-small {
         display: flex; 
     }
+    .nav-link {
+    padding: 10px 0px; 
+}
 }
