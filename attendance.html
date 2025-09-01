@@ -6,8 +6,12 @@
     <title>NSS NSUT CELL</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="navigation.css" />
-    <link rel="stylesheet" href="attendence.css">
-    <link rel="icon" href="images/header-images/nss-logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="attendence.css" />
+    <link
+      rel="icon"
+      href="images/header-images/nss-logo.png"
+      type="image/x-icon"
+    />
   </head>
   <body>
     <div id="header"></div>
@@ -15,57 +19,132 @@
 
     <main>
       <div class="login-body">
-  <div class="login-container" id="login-container">
-    <div class="login-form-container login-sign-up-container">
-      <form action="#">
-        <h1>Admin Login</h1>
-        <br><br><br>
-        <input type="text" placeholder="AdminId" />
-        <input type="password" placeholder="Password" />
-        <a href="#" style="align-self: flex-end;">Forgot your password?</a>
-        <br>
-        <button>Login</button>
-      </form>
-    </div>
+        <div class="login-container" id="login-container">
+          <div class="login-form-container login-sign-up-container">
+            <form action="#">
+              <h1>Admin Login</h1>
+              <br /><br /><br />
+              <input type="text" placeholder="AdminId" />
+              <input type="password" placeholder="Password" />
+              <a href="admin.html" style="align-self: flex-end"
+                >Forgot your password?</a
+              >
+              <br />
+              <button>Login</button>
+            </form>
+          </div>
 
-    <div class="login-form-container login-sign-in-container">
-      <form action="#">
-        <h1>User Login</h1>
-        <br><br><br>
-        <input type="text" placeholder="UserId" />
-        <input type="password" placeholder="Password" />
-        <a href="#" style="align-self: flex-end;">Forgot your password?</a>
-        <br>
-        <button>Login</button>
-      </form>
-    </div>
+          <div class="login-form-container login-sign-in-container">
+            <form action="#">
+              <h1>User Login</h1>
+              <br /><br /><br />
+              <input type="text" placeholder="UserId" />
+              <input type="password" placeholder="Password" />
+              <a href="#" style="align-self: flex-end">Forgot your password?</a>
+              <br />
+              <button>Login</button>
+            </form>
+          </div>
 
-    <div class="login-overlay-container">
-      <div class="login-overlay">
-        <div class="login-overlay-panel login-overlay-left">
-          <h1>Welcome Back, Admin!</h1>
-          <p>Access volunteer records, manage event attendance, and generate detailed reports with ease.</p>
-          <h2 style="margin-bottom: 0;">Are you a volunteer?</h2>
-          <p>Click below to go to Volunteer Login</p>
-          <button class="ghost" id="signIn">User Login</button>
-        </div>
-        <div class="login-overlay-panel login-overlay-right">
-          <h1>Welcome NSS Volunteer!</h1>
-          <p>Keep track of your attendance, view your participation record, and stay updated with upcoming NSS events.</p>
-          <h2 style="margin-bottom: 0;">Are you an admin?</h2>
-          <p>Click below to go to Admin Login</p>
-          <button class="ghost" id="signUp">Admin Login</button>
+          <div class="login-overlay-container">
+            <div class="login-overlay">
+              <div class="login-overlay-panel login-overlay-left">
+                <h1>Welcome Back, Admin!</h1>
+                <p>
+                  Access volunteer records, manage event attendance, and
+                  generate detailed reports with ease.
+                </p>
+                <h2 style="margin-bottom: 0">Are you a volunteer?</h2>
+                <p>Click below to go to Volunteer Login</p>
+                <button class="ghost" id="signIn">User Login</button>
+              </div>
+              <div class="login-overlay-panel login-overlay-right">
+                <h1>Welcome NSS Volunteer!</h1>
+                <p>
+                  Keep track of your attendance, view your participation record,
+                  and stay updated with upcoming NSS events.
+                </p>
+                <h2 style="margin-bottom: 0">Are you an admin?</h2>
+                <p>Click below to go to Admin Login</p>
+                <button class="ghost" id="signUp">Admin Login</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-</main>
+
+      <!-- Mobile Navigation -->
+      <div class="mobile-login-body">
+        <div class="mobile-login-container">
+          <!-- Toggle Buttons -->
+          <div class="mobile-toggle-buttons">
+            <button id="mobileUserToggle" class="mobile-toggle-btn">
+              User Login
+            </button>
+            <button id="mobileAdminToggle" class="mobile-toggle-btn">
+              Admin Login
+            </button>
+          </div>
+
+          <!-- Admin Login Form -->
+          <div
+            class="mobile-login-form mobile-admin-form"
+            id="mobile-admin-form"
+            style="display: none"
+          >
+            <form action="#">
+              <h2>Admin Login</h2>
+              <input type="text" placeholder="Admin ID" class="mobile-input" />
+              <input
+                type="password"
+                placeholder="Password"
+                class="mobile-input"
+              />
+              <a href="admin.html" class="mobile-forgot-link"
+                >Forgot your password?</a
+              >
+              <button type="submit" class="mobile-login-btn">Login</button>
+            </form>
+          </div>
+
+          <!-- User Login Form -->
+          <div class="mobile-login-form mobile-user-form" id="mobile-user-form">
+            <form action="#">
+              <h2>User Login</h2>
+              <input type="text" placeholder="User ID" class="mobile-input" />
+              <input
+                type="password"
+                placeholder="Password"
+                class="mobile-input"
+              />
+              <a href="#" class="mobile-forgot-link">Forgot your password?</a>
+              <button type="submit" class="mobile-login-btn">Login</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      // Simple toggle logic for mobile
+      document
+        .getElementById("mobileUserToggle")
+        .addEventListener("click", function () {
+          document.getElementById("mobile-user-form").style.display = "block";
+          document.getElementById("mobile-admin-form").style.display = "none";
+        });
+
+      document
+        .getElementById("mobileAdminToggle")
+        .addEventListener("click", function () {
+          document.getElementById("mobile-user-form").style.display = "none";
+          document.getElementById("mobile-admin-form").style.display = "block";
+        });
+    </script>
     <div id="footer"></div>
     <script src="attendance.js"></script>
     <script src="header-footer.js"></script>
-    <script src="navigation.js"></script> 
-    
-    <script src="load-navi-bar.js"></script> 
+    <script src="navigation.js"></script>
+
+    <script src="load-navi-bar.js"></script>
   </body>
 </html>
